@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import { Layout, Typography, Space } from "antd";
+import Homepage from "./components/Homepage";
+import Exchanges from "./components/Exchanges";
+import Cryptocurrencies from "./components/Cryptocurrencies";
+import Cryptodetails from "./components/Cryptodetails";
+import News from "./components/News";
+import Navbar from ".//components/Navbar";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="flex flex-row">
+        <div className="w-2/5">
+          <Navbar />
+        </div>
+        <div className="m-5">
+          <Layout>
+            <div>
+              <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="/exchanges" element={<Exchanges />} />
+                <Route
+                  path="/cryptocurrencies"
+                  element={<Cryptocurrencies />}
+                />
+                <Route path="/cryptodetails" element={<Cryptodetails />} />
+                <Route path="/news" element={<News />} />
+              </Routes>
+            </div>
+          </Layout>
+        </div>
+      </div>
+
+      <footer className="">
+        <Typography.Title level={5}>
+          Crypto World <br />
+          All rights Reserved
+        </Typography.Title>
+        <Space>
+          <Link to="/">Home</Link>
+          <Link to="/exchanges">Exchanges</Link>
+          <Link to="/news">News</Link>
+        </Space>
+      </footer>
     </div>
   );
-}
+};
 
 export default App;
