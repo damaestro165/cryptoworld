@@ -10,7 +10,7 @@ import { useGetCryptosQuery } from "../services/cryptoApi";
 const { Title } = Typography;
 
 function Homepage() {
-  const { data, isFetching } = useGetCryptosQuery();
+  const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data;
 
   if (isFetching) return "loading ....";
@@ -60,12 +60,10 @@ function Homepage() {
       <div>
         <Title level={2}> Latest Crypto News</Title>
         <Title level={3}>
-          <Link to="/news" simplified>
-            Show More
-          </Link>
+          <Link to="/news">Show More</Link>
         </Title>
       </div>
-      <News />
+      <News simplified />
     </div>
   );
 }
