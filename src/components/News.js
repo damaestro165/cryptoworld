@@ -4,6 +4,7 @@ import moment from "moment";
 import { useGetCryptosNewsQuery } from "../services/cryptoNewsApi";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import { Content } from "antd/lib/layout/layout";
+import demo from "../crypto.png";
 
 const { Text, Title } = Typography;
 const { Option } = Select;
@@ -13,6 +14,7 @@ const News = ({ simplified }) => {
   const {
     data: cryptoNews,
     isLoading,
+    isFetching,
     isSuccess,
     isError,
   } = useGetCryptosNewsQuery({
@@ -24,7 +26,7 @@ const News = ({ simplified }) => {
 
   let content;
 
-  if (isLoading) {
+  if (isLoading || isFetching) {
     content = <div>Loading .......</div>;
   } else if (isSuccess) {
     content = (
@@ -53,14 +55,20 @@ const News = ({ simplified }) => {
               <Card hoverable>
                 <div>
                   <Title level={4}>{news.name}</Title>
-
+                  <img
+                    style={{ maxWidth: "100px", maxHeight: "100px" }}
+                    src={news.image.thumbnail.contentUrl || demo}
+                  />
                   <p>
                     {news.description > 100
                       ? `${news.description.substring(0, 100)}...`
                       : news.description}
                   </p>
                 </div>
-                <Avatar src={news.provider[0].imagel} />
+                <Avatar
+                  //news.provider[0].image.thumbnail.contentUrl
+                  src={demo}
+                />
                 <Text>
                   {moment(news.dataPublished)
                     .startOf("ss")

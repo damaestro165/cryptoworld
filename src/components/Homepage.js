@@ -16,7 +16,7 @@ function Homepage() {
   if (isFetching) return "loading ....";
 
   return (
-    <div>
+    <div className="bg-red-500 m-5">
       <Title level={2}> Global Crypto Stats</Title>
       <Row>
         <Col span={12}>

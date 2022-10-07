@@ -2,11 +2,11 @@ import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { Layout, Typography, Space } from "antd";
 import Homepage from "./components/Homepage";
-import Exchanges from "./components/Exchanges";
+
 import Cryptocurrencies from "./components/Cryptocurrencies";
 import Cryptodetails from "./components/Cryptodetails";
 import News from "./components/News";
-import Navbar from ".//components/Navbar";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
@@ -16,16 +16,16 @@ const App = () => {
           <Navbar />
         </div>
         <div className="m-5">
-          <Layout>
+          <Layout className="bg-red-500 m-5">
             <div>
               <Routes>
                 <Route path="/" element={<Homepage />} />
-                <Route path="/exchanges" element={<Exchanges />} />
+
                 <Route
                   path="/cryptocurrencies"
                   element={<Cryptocurrencies />}
                 />
-                <Route path="/cryptodetails" element={<Cryptodetails />} />
+                <Route path="/crypto/:coinId" element={<Cryptodetails />} />
                 <Route path="/news" element={<News />} />
               </Routes>
             </div>
