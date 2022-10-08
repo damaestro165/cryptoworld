@@ -11,16 +11,15 @@ import Navbar from "./components/Navbar";
 const App = () => {
   return (
     <div>
-      <div className="flex flex-row">
-        <div className="w-2/5">
+      <div className="">
+        <div className="">
           <Navbar />
         </div>
-        <div className="m-5">
-          <Layout className="bg-red-500 m-5">
+        <div className="">
+          <Layout className="layout">
             <div>
               <Routes>
                 <Route path="/" element={<Homepage />} />
-
                 <Route
                   path="/cryptocurrencies"
                   element={<Cryptocurrencies />}
@@ -33,14 +32,13 @@ const App = () => {
         </div>
       </div>
 
-      <footer className="">
+      <footer className="footer">
         <Typography.Title level={5}>
           Crypto World <br />
           All rights Reserved
         </Typography.Title>
         <Space>
           <Link to="/">Home</Link>
-          <Link to="/exchanges">Exchanges</Link>
           <Link to="/news">News</Link>
         </Space>
       </footer>

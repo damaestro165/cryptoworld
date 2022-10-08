@@ -1,0 +1,9 @@
+.input {
+  width: 80vw;
+  padding: 5px;
+  margin: 2rem;
+}
+.ant-input {
+  padding: 5px;
+  border: solid 5px red;
+}

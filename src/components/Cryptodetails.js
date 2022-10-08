@@ -33,6 +33,7 @@ const Cryptodetails = () => {
         <Col>
           <Col>
             <Title level={2}>
+              <img src={coinData.iconUrl} className="w-12" />
               {coinData.name} {coinData.symbol} Price
             </Title>
             <p>

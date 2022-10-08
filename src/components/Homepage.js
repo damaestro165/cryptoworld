@@ -16,52 +16,48 @@ function Homepage() {
   if (isFetching) return "loading ....";
 
   return (
-    <div className="bg-red-500 m-5">
-      <Title level={2}> Global Crypto Stats</Title>
-      <Row>
-        <Col span={12}>
-          <Statistic
-            title="Total Cryptocurrencies"
-            value={globalStats.data.stats.total}
-          />
+    <div className="">
+      <Title level={2} className="big-text">
+        Global Crypto Stats
+      </Title>
+      <Row className="stats-container">
+        <Col className="stats-items">
+          <p className="stats-title"> Total Cryptocurrencies</p>
+          <p>{globalStats.data.stats.total}</p>
         </Col>
-        <Col span={12}>
-          <Statistic
-            title="Total Exchanges"
-            value={millify(globalStats.data.stats.totalExchanges)}
-          />
+        <Col className="stats-items">
+          <p className="stats-title">Total Exchanges</p>
+          <p>{millify(globalStats.data.stats.totalExchanges)}</p>
         </Col>
-        <Col span={12}>
-          <Statistic
-            title="Total Market Cap"
-            value={millify(globalStats.data.stats.totalMarketCap)}
-          />
+        <Col className="stats-items">
+          <p className="stats-title">Total Market Cap</p>
+          <p>{millify(globalStats.data.stats.totalMarketCap)}</p>
         </Col>
-        <Col span={12}>
-          <Statistic
-            title="Total 24h Volume"
-            value={millify(globalStats.data.stats.total24hVolume)}
-          />
+        <Col className="stats-items">
+          <p className="stats-title">Total 24h Volume</p>
+          <p>{millify(globalStats.data.stats.total24hVolume)}</p>
         </Col>
-        <Col span={12}>
-          <Statistic
-            title="Total Market"
-            value={millify(globalStats.data.stats.totalMarkets)}
-          />
+        <Col className="stats-items">
+          <p className="stats-title">Total Market</p>
+          <p>{millify(globalStats.data.stats.totalMarkets)}</p>
         </Col>
       </Row>
-      <div>
-        <Title level={2}>Top 10 Cryptocurrencies in the world</Title>
-        <Title level={3}>
-          <Link to="/cryptocurrencies"> Show More</Link>
-        </Title>
+      <div className="section">
+        <p className="section-title">Top 10 Cryptocurrencies in the world</p>
+        <p>
+          <Link to="/cryptocurrencies" className="section-title">
+            Show More
+          </Link>
+        </p>
       </div>
       <Cryptocurrencies simplified />
-      <div>
-        <Title level={2}> Latest Crypto News</Title>
-        <Title level={3}>
-          <Link to="/news">Show More</Link>
-        </Title>
+      <div className="section">
+        <p className="section-title"> Latest Crypto News</p>
+        <p>
+          <Link to="/news" className="section-title">
+            Show More
+          </Link>
+        </p>
       </div>
       <News simplified />
     </div>

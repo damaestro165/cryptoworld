@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import millify from "millify";
 import { Link } from "react-router-dom";
 import { Card, Row, Col, Input } from "antd";
+import "./cryptocurrencies.css";
 
 import { useGetCryptosQuery } from "../services/cryptoApi";
 
@@ -32,8 +33,9 @@ const Cryptocurrencies = ({ simplified }) => {
     cryptoContent = (
       <div>
         {!simplified && (
-          <div>
+          <div className="input">
             <Input
+              className="input-tag"
               placeholder="Search Cryptocurrency"
               onChange={(e) => setSearchTerm(e.target.value)}
             />
