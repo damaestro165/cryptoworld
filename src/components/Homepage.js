@@ -4,6 +4,11 @@ import { Typography, Row, Col, Statistic } from "antd";
 import { Link } from "react-router-dom";
 import News from "./News";
 import Cryptocurrencies from "./Cryptocurrencies";
+import { GiCoins } from "react-icons/gi";
+import { RiExchangeFundsFill } from "react-icons/ri";
+import { BsFillBarChartFill } from "react-icons/bs";
+import { FaFunnelDollar } from "react-icons/fa";
+import { AiOutlineDollar } from "react-icons/ai";
 
 import { useGetCryptosQuery } from "../services/cryptoApi";
 
@@ -21,23 +26,28 @@ function Homepage() {
         Global Crypto Stats
       </Title>
       <Row className="stats-container">
-        <Col className="stats-items">
+        <Col className="stats-items" hoverable>
+          <GiCoins />
           <p className="stats-title"> Total Cryptocurrencies</p>
           <p>{globalStats.data.stats.total}</p>
         </Col>
-        <Col className="stats-items">
+        <Col className="stats-items" hoverable>
+          <RiExchangeFundsFill />
           <p className="stats-title">Total Exchanges</p>
           <p>{millify(globalStats.data.stats.totalExchanges)}</p>
         </Col>
-        <Col className="stats-items">
+        <Col className="stats-items" hoverable>
+          <BsFillBarChartFill />
           <p className="stats-title">Total Market Cap</p>
           <p>{millify(globalStats.data.stats.totalMarketCap)}</p>
         </Col>
-        <Col className="stats-items">
+        <Col className="stats-items" hoverable>
+          <FaFunnelDollar />
           <p className="stats-title">Total 24h Volume</p>
           <p>{millify(globalStats.data.stats.total24hVolume)}</p>
         </Col>
-        <Col className="stats-items">
+        <Col className="stats-items" hoverable>
+          <AiOutlineDollar />
           <p className="stats-title">Total Market</p>
           <p>{millify(globalStats.data.stats.totalMarkets)}</p>
         </Col>

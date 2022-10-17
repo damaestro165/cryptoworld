@@ -3,6 +3,8 @@ import HTMLReactParser from "html-react-parser";
 import { useParams } from "react-router-dom";
 import { Col, Row, Typography, Select } from "antd";
 import millify from "millify";
+import "./cryptodetails.css";
+
 import {
   useGetCrpytoDetailsQuery,
   useGetCrpytoHistoryQuery,
@@ -33,7 +35,7 @@ const Cryptodetails = () => {
         <Col>
           <Col>
             <Title level={2}>
-              <img src={coinData.iconUrl} className="w-12" />
+              <img src={coinData.iconUrl} className="" />
               {coinData.name} {coinData.symbol} Price
             </Title>
             <p>

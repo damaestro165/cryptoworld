@@ -7,3 +7,6 @@
   padding: 5px;
   border: solid 5px red;
 }
+.card {
+  box-shadow: 67px 19px 203px -84px rgba(0, 0, 0, 0.91);
+}
